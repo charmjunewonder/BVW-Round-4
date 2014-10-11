@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class StaticValues : MonoBehaviour {
-	public static float worldboudary = 10;
+public class Hit : MonoBehaviour {
+
 	// Use this for initialization
 	void Start () {
 	
@@ -11,5 +11,10 @@ public class StaticValues : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+	}
+	void OnTriggerEnter(Collider c){
+		if(c.tag == "BoyShip"){
+			Debug.Log ("Hit");
+		}
 	}
 }
