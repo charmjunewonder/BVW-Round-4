@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class StaticValues : MonoBehaviour {
-	public static float worldboudary = 10;
+	public static float worldboudary = 10, worldspeed = 3;
 	// Use this for initialization
 	void Start () {
 	

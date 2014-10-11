@@ -16,6 +16,24 @@ public class BoyBehavior : MonoBehaviour {
 		if(Input.GetKey("d")){
 			transform.Translate(new Vector3(moveSpeed * Time.deltaTime, 0, 0));
 		}
-	
+		if(Input.GetKey("w")){
+			transform.Translate(new Vector3(0, moveSpeed * Time.deltaTime, 0));
+		}
+		if(Input.GetKey("s")){
+			transform.Translate(new Vector3(0, -moveSpeed * Time.deltaTime, 0));
+		}
+
+		if(transform.position.x >= StaticValues.worldboudary){
+			transform.Translate(new Vector3(-moveSpeed * Time.deltaTime, 0, 0));
+		}
+		if(transform.position.x <= -StaticValues.worldboudary){
+			transform.Translate(new Vector3(moveSpeed * Time.deltaTime, 0, 0));
+		}
+		if(transform.position.y <= -StaticValues.worldboudary){
+			transform.Translate(new Vector3(0, moveSpeed * Time.deltaTime, 0));
+		}
+		if(transform.position.y >= StaticValues.worldboudary){
+			transform.Translate(new Vector3(0, -moveSpeed * Time.deltaTime, 0));
+		}
 	}
 }
