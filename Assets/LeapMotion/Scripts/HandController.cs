@@ -241,6 +241,14 @@ public class HandController : MonoBehaviour {
     Frame frame = GetFrame();
     UpdateHandModels(hand_graphics_, frame.Hands, leftGraphicsModel, rightGraphicsModel);
   }
+  
+  public Vector getFirstHandPosition(){
+		Frame frame = GetFrame();
+		HandList hands = frame.Hands;
+		Hand firstHand = hands[0];
+		Vector position = firstHand.PalmPosition;
+		return position;
+  }
 
   void FixedUpdate() {
     if (leap_controller_ == null)
