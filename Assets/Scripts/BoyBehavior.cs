@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
-using Leap;
+
 public class BoyBehavior : MonoBehaviour {
 	public float moveSpeed;
-	public bool useLeapMotion;
-	public HandController handController;
 	// Use this for initialization
 	void Start () {
 	
@@ -36,11 +34,6 @@ public class BoyBehavior : MonoBehaviour {
 		}
 		if(transform.position.y >= StaticValues.worldboudary){
 			transform.Translate(new Vector3(0, -moveSpeed * Time.deltaTime, 0));
-		}
-		
-		if(useLeapMotion){
-			Vector currentPosition = handController.getFirstHandPosition();
-			transform.position = new Vector3(currentPosition.x, currentPosition.y, -5);
 		}
 	}
 }
