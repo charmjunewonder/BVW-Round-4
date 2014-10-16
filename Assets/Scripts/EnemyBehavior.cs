@@ -2,11 +2,11 @@
 using System.Collections;
 
 public class EnemyBehavior : MonoBehaviour {
-	public GameObject laser;
-	public float moveSpeed, fireTime, chargeTime, sleepTime;
+	public GameObject part;
+	public float moveSpeed, fireTime, chargeTime, sleepTime, firespeed;
 
 	bool charge = false, fire = false, sleep = true, move = false;
-
+	GameObject temp;
 	float timer = 0, direction = 1;
 
 	// Use this for initialization
@@ -52,16 +52,31 @@ public class EnemyBehavior : MonoBehaviour {
 	IEnumerator weaponFire(){
 		//Debug.Log ("fire");
 		move = true;
-		laser.SetActive (true);
-		yield return new WaitForSeconds (fireTime + myRandom.aFloat(-0.5f,0.5f));
+		emit ();
+		//laser.SetActive (true);
+		//yield return new WaitForSeconds (fireTime + myRandom.aFloat(-0.5f,0.5f));
 		sleep = true;
+		yield return null;
 	}
 	IEnumerator weaponSleep(){
 		//Debug.Log ("sleep");
 		move = true;
-		laser.SetActive (false);
+		//laser.SetActive (false);
 		transform.localScale = new Vector3 (1, 1, 1);
 		yield return new WaitForSeconds (sleepTime + myRandom.aFloat(-1f,1f));
 		charge = true;
+	}
+	void emit(){
+		temp = Instantiate (part, transform.position, Quaternion.identity) as GameObject;  
+		temp.SetActive (true);
+		temp.transform.rigidbody.velocity = new Vector3 (-firespeed / 1.414f, -firespeed / 1.414f, 0);
+
+		temp = Instantiate (part, transform.position, Quaternion.identity) as GameObject;
+		temp.SetActive (true);
+		temp.transform.rigidbody.velocity = new Vector3 (0, -firespeed, 0);
+
+		temp = Instantiate (part, transform.position, Quaternion.identity) as GameObject;  
+		temp.SetActive (true);
+		temp.transform.rigidbody.velocity = new Vector3 (firespeed / 1.414f, -firespeed / 1.414f, 0);
 	}
 }

@@ -5,6 +5,7 @@ public class BoyBehavior : MonoBehaviour {
 	public float moveSpeed;
 	public bool useLeapMotion;
 	public HandController handController;
+
 	// Use this for initialization
 	void Start () {
 	

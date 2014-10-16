@@ -5,22 +5,24 @@ public class Stage2Control : MonoBehaviour {
 	const int birdMax = 5, cloudMax = 5;
 	public static int birdNum = 0, cloudNum = 0;
 	public GameObject bird, cloud;
-	bool birdTrigger = true, cloudTrigger = true;
+	bool birdTrigger = true, cloudTrigger = true, start;
 	GameObject temp;
 	// Use this for initialization
 	void Start () {
-	
+		start = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(birdNum < birdMax && birdTrigger){
-			birdTrigger = false;
-			StartCoroutine(genBird());
-		}
-		if(cloudNum < cloudMax && cloudTrigger){
-			cloudTrigger = false;
-			StartCoroutine(genCloud());
+		if(start){
+			if(birdNum < birdMax && birdTrigger){
+				birdTrigger = false;
+				StartCoroutine(genBird());
+			}
+			if(cloudNum < cloudMax && cloudTrigger){
+				cloudTrigger = false;
+				StartCoroutine(genCloud());
+			}
 		}
 	}
 	IEnumerator genBird(){
@@ -37,7 +39,7 @@ public class Stage2Control : MonoBehaviour {
 			temp.SetActive(true);
 			temp.GetComponent<BirdBehavior>().direction = -1;
 		}
-		temp.GetComponent<BirdBehavior> ().moveSpeed = 3 + myRandom.aFloat (-1f, 1f);
+		temp.GetComponent<BirdBehavior> ().moveSpeed = 5 + myRandom.aFloat (-2f, 2f);
 		yield return new WaitForSeconds (3 + myRandom.aFloat(-2f, 2f));
 		birdTrigger = true;
 	}
