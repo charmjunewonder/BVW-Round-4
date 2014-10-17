@@ -14,10 +14,10 @@ public class Stage1Control : MonoBehaviour {
 			eship [0] = Instantiate (enemyship) as GameObject;
 			eship [0].SetActive (true); 
 
-			eship [0].GetComponent<EnemyBehavior> ().moveSpeed = 3;
+			eship [0].GetComponent<EnemyBehavior> ().moveSpeed = 4;
 			eship [0].GetComponent<EnemyBehavior> ().fireTime = 1.5f;
-			eship [0].GetComponent<EnemyBehavior> ().chargeTime = 3;
-			eship [0].GetComponent<EnemyBehavior> ().sleepTime = 3;
+			eship [0].GetComponent<EnemyBehavior> ().chargeTime = 2;
+			eship [0].GetComponent<EnemyBehavior> ().sleepTime = 2;
 
 			StartCoroutine (nextShip ());
 		}
@@ -34,8 +34,8 @@ public class Stage1Control : MonoBehaviour {
 
 		eship [1].GetComponent<EnemyBehavior> ().moveSpeed = 6;
 		eship [1].GetComponent<EnemyBehavior> ().fireTime = 1f;
-		eship [1].GetComponent<EnemyBehavior> ().chargeTime = 2;
-		eship [1].GetComponent<EnemyBehavior> ().sleepTime = 3;
+		eship [1].GetComponent<EnemyBehavior> ().chargeTime = 1;
+		eship [1].GetComponent<EnemyBehavior> ().sleepTime = 2;
 	}
 
 }

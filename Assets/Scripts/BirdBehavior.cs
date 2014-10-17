@@ -28,7 +28,7 @@ public class BirdBehavior : MonoBehaviour {
 		float x = target.transform.position.x - transform.position.x;
 		float y = target.transform.position.y - transform.position.y;
 		Vector3 dis = new Vector3 (x, y, 0);
-		print (dis.normalized);
+		//print (dis.normalized);
 		transform.Translate (dis.normalized * moveSpeed * Time.deltaTime);
 	}
 

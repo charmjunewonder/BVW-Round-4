@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Stage2Control : MonoBehaviour {
-	const int birdMax = 5, cloudMax = 5;
+	const int birdMax = 3, cloudMax = 4;
 	public static int birdNum = 0, cloudNum = 0;
 	public GameObject bird, cloud;
 	bool birdTrigger = true, cloudTrigger = true, start;
