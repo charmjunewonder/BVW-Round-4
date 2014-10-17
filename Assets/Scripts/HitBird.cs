@@ -17,6 +17,7 @@ public class HitBird : MonoBehaviour {
 			Debug.Log ("HitBird");
 			Destroy(c.gameObject);
 			Stage2Control.birdNum --;
+			Destroy (gameObject);
 		}
 	}
 }
