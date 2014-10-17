@@ -37,6 +37,8 @@ public class HandController : MonoBehaviour {
   public float recorderSpeed = 1.0f;
   public bool recorderLoop = true;
   
+  float previousGrab = 0.0f;
+
   LeapRecorder recorder_ = new LeapRecorder();
   
   Controller leap_controller_;
@@ -248,6 +250,17 @@ public class HandController : MonoBehaviour {
 		Hand firstHand = hands[0];
 		Vector position = firstHand.PalmPosition;
 		return position;
+  }
+
+  public bool getHandGrab(){
+    Frame frame = GetFrame();
+    HandList hands = frame.Hands;
+    Hand firstHand = hands[0];
+    float currentGrab = firstHand.GrabStrength;
+    float difference = previousGrab - currentGrab;
+    bool grabOrNot = difference > 0.3f & currentGrab < 0.4f;
+    previousGrab = currentGrab;
+    return grabOrNot;
   }
 
   void FixedUpdate() {

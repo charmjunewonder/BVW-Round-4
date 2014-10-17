@@ -4,6 +4,8 @@ using System.Collections;
 public class BoyEmit : MonoBehaviour {
 	public GameObject part;
 	public float firespeed;
+	public bool useLeapMotion;
+	public HandController handController;
 
 	bool cooldown;
 	GameObject temp;
@@ -15,6 +17,10 @@ public class BoyEmit : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown ("x") && cooldown){
+			emit();
+		}
+
+		if(useLeapMotion && handController.getHandGrab()){
 			emit();
 		}
 	
