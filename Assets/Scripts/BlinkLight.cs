@@ -3,6 +3,7 @@ using System.Collections;
 
 public class BlinkLight : MonoBehaviour {
 	public Material on, off;
+	public float blinktime;
 	bool trigger, red;
 	MeshRenderer mesh;
 	// Use this for initialization
@@ -30,7 +31,7 @@ public class BlinkLight : MonoBehaviour {
 		}
 	}
 	IEnumerator wait(){
-		yield return new WaitForSeconds (0.1f);
+		yield return new WaitForSeconds (blinktime);
 		trigger = true;
 	}
 }

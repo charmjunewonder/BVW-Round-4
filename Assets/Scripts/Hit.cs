@@ -14,7 +14,9 @@ public class Hit : MonoBehaviour {
 	}
 	void OnTriggerEnter(Collider c){
 		if(c.tag == "BoyShip"){
-			Debug.Log ("Hit");
+			//Destroy(c.gameObject);
+			Destroy(gameObject);
+
 		}
 	}
 }

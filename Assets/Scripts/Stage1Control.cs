@@ -35,7 +35,7 @@ public class Stage1Control : MonoBehaviour {
 		eship [1].GetComponent<EnemyBehavior> ().moveSpeed = 6;
 		eship [1].GetComponent<EnemyBehavior> ().fireTime = 1f;
 		eship [1].GetComponent<EnemyBehavior> ().chargeTime = 1;
-		eship [1].GetComponent<EnemyBehavior> ().sleepTime = 2;
+		eship [1].GetComponent<EnemyBehavior> ().sleepTime = 1.5f;
 	}
 
 }
