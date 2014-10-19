@@ -40,7 +40,10 @@ public class Stage1Control : MonoBehaviour {
 		eship [0].GetComponent<EnemyBehavior> ().fireTime = 1.5f;
 		eship [0].GetComponent<EnemyBehavior> ().chargeTime = 2;
 		eship [0].GetComponent<EnemyBehavior> ().sleepTime = 2;
-		
+
+		eship [0].GetComponent<Floating> ().speed = 0.3f;
+		eship [0].GetComponent<Floating> ().last = 1f;
+
 		StartCoroutine (nextShip ());
 		yield return null;
 	}
@@ -53,6 +56,10 @@ public class Stage1Control : MonoBehaviour {
 		eship [1].GetComponent<EnemyBehavior> ().fireTime = 1f;
 		eship [1].GetComponent<EnemyBehavior> ().chargeTime = 1;
 		eship [1].GetComponent<EnemyBehavior> ().sleepTime = 1.5f;
+
+		eship [1].GetComponent<Floating> ().speed = 0.4f;
+		eship [1].GetComponent<Floating> ().last = 0.8f;
+
 		yield return null;
 	}
 
