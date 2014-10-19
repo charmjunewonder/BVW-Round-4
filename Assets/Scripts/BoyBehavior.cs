@@ -39,9 +39,9 @@ public class BoyBehavior : MonoBehaviour {
 			transform.Translate(new Vector3(0, -moveSpeed * Time.deltaTime, 0));
 		}
 		
-		if(useLeapMotion){
-			Vector currentPosition = handController.getFirstHandPosition();
-			transform.position = new Vector3(currentPosition.x, currentPosition.y, -5);
-		}
+//		if(useLeapMotion){
+//			Vector currentPosition = handController.getFirstHandPosition();
+//			transform.position = new Vector3(currentPosition.x, currentPosition.y, -5);
+//		}
 	}
 }
