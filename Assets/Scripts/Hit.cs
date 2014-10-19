@@ -18,5 +18,10 @@ public class Hit : MonoBehaviour {
 			Destroy(gameObject);
 
 		}
+		if(c.tag == "EnemyShip"){
+			Destroy(c.gameObject);
+			Destroy(gameObject);
+			
+		}
 	}
 }

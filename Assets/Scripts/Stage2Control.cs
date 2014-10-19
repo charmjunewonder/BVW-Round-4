@@ -4,12 +4,17 @@ using System.Collections;
 public class Stage2Control : MonoBehaviour {
 	const int birdMax = 3, cloudMax = 4;
 	public static int birdNum = 0, cloudNum = 0;
-	public GameObject bird, cloud;
+	public GameObject bird, cloud, enemybird;
 	bool birdTrigger = true, cloudTrigger = true, start;
 	GameObject temp;
 	// Use this for initialization
 	void Start () {
 		start = true;
+		temp = Instantiate(enemybird, new Vector3(-StaticValues.worldboudary - 1, myRandom.aFloat(0, -15), -5), 
+		                   Quaternion.identity) as GameObject;
+		temp.SetActive(true);
+		temp.GetComponent<BirdBehavior>().direction = 1;
+
 	}
 	
 	// Update is called once per frame
