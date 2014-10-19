@@ -9,13 +9,14 @@ public class MoveObject : MonoBehaviour {
 	public float speed = 10.0f;
 
 	public bool isScale = false;
-	public Vector3 toScale;
 	public float scaleSpeed = 0.1f;
 
 	public bool disappearBeforeMoving = false;
 	public bool disappearAfterMoving = false;
 
 	void Start(){
+		gameObject.renderer.enabled = true;
+
 		if(disappearBeforeMoving){
 			gameObject.renderer.enabled = false;
 		}

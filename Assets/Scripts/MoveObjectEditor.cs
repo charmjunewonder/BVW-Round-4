@@ -16,7 +16,6 @@ public class MoveObjectEditor : Editor {
        	
        	myTarget.isScale = EditorGUILayout.Toggle("Is Scale", myTarget.isScale);
     	if(myTarget.isScale){
-      		myTarget.toScale = EditorGUILayout.Vector3Field("To Scale", myTarget.toScale);
       		myTarget.scaleSpeed = EditorGUILayout.FloatField("Scale Speed", myTarget.scaleSpeed);
     	}
     	myTarget.disappearBeforeMoving = EditorGUILayout.Toggle("Disappear Before Moving", myTarget.disappearBeforeMoving);
