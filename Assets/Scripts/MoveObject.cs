@@ -1,25 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[ExecuteInEditMode]
 public class MoveObject : MonoBehaviour {
 
-	public Vector3 fromPostion;
 	public Vector3 toPosition;
-	public float startDelay = 0;
 	public float moveInterval = 0.1f;
-	public bool playOnAwake = false;
 	public float speed = 10.0f;
 
-	// Use this for initialization
-	void Start () {
-		if(playOnAwake){
-			moveObject();
+	public bool isScale = false;
+	public Vector3 toScale;
+	public float scaleSpeed = 0.1f;
+
+	public bool disappearBeforeMoving = false;
+	public bool disappearAfterMoving = false;
+
+	void Start(){
+		if(disappearBeforeMoving){
+			gameObject.renderer.enabled = false;
 		}
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 
 	public void moveObject(){
@@ -27,12 +26,20 @@ public class MoveObject : MonoBehaviour {
 	}
 
 	IEnumerator DoMoveOject(){
-		yield return new WaitForSeconds(startDelay);
+		if(disappearBeforeMoving){
+			gameObject.renderer.enabled = true;
+		}
 		while(Vector3.Distance(transform.position, toPosition) > 0.1f){
 			Vector3 direction = transform.position - toPosition;
 			direction.Normalize();
 			transform.Translate( direction * speed * Time.deltaTime);
+			if(isScale){
+				transform.localScale += new Vector3(scaleSpeed, scaleSpeed, scaleSpeed);
+			}
 			yield return new WaitForSeconds(moveInterval);
+		}
+		if(disappearAfterMoving){
+			gameObject.renderer.enabled = false;
 		}
 	}
 }
