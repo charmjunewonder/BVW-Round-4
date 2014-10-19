@@ -11,7 +11,7 @@ public class FadeOut : MonoBehaviour {
 		startfade = false;
 		mesh = GetComponent<MeshRenderer> ();
 		ori_a = mesh.material.color.a;
-		//fadeOut ();
+		fadeOut ();
 	}
 	
 	// Update is called once per frame

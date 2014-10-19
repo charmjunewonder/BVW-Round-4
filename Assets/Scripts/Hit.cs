@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Hit : MonoBehaviour {
-
+	public GameObject breakdown, blast;
 	// Use this for initialization
 	void Start () {
 	
@@ -14,11 +14,24 @@ public class Hit : MonoBehaviour {
 	}
 	void OnTriggerEnter(Collider c){
 		if(c.tag == "BoyShip"){
+			GameObject temp;
+			//breakdown.audio.Play();
+			temp = Instantiate(breakdown) as GameObject;
+			temp.SetActive(true);
+			temp = Instantiate(blast, transform.position, Quaternion.identity) as GameObject;
+			temp.SetActive(true);
 			//Destroy(c.gameObject);
 			Destroy(gameObject);
 
 		}
 		if(c.tag == "EnemyShip"){
+			GameObject temp;
+			//breakdown.audio.Play();
+			temp = Instantiate(breakdown) as GameObject;
+			temp.SetActive(true);
+			temp = Instantiate(blast, transform.position, Quaternion.identity) as GameObject;
+			temp.SetActive(true);
+
 			Destroy(c.gameObject);
 			Destroy(gameObject);
 			
