@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Hit : MonoBehaviour {
-
+	public GameObject breakdown;
 	// Use this for initialization
 	void Start () {
 	
@@ -19,6 +19,11 @@ public class Hit : MonoBehaviour {
 
 		}
 		if(c.tag == "EnemyShip"){
+			GameObject temp;
+			//breakdown.audio.Play();
+			temp = Instantiate(breakdown) as GameObject;
+			temp.SetActive(true);
+
 			Destroy(c.gameObject);
 			Destroy(gameObject);
 			

@@ -4,7 +4,7 @@ using System.Collections;
 public class EnemyBehavior : MonoBehaviour {
 	public GameObject part;
 	public float moveSpeed, fireTime, chargeTime, sleepTime, firespeed;
-
+	public AudioSource emitsound;
 	bool charge = false, fire = false, sleep = true, move = false;
 	GameObject temp;
 	float timer = 0, direction = 1;
@@ -67,6 +67,7 @@ public class EnemyBehavior : MonoBehaviour {
 		charge = true;
 	}
 	void emit(){
+		emitsound.audio.Play ();
 		temp = Instantiate (part, transform.position, Quaternion.identity) as GameObject;  
 		temp.SetActive (true);
 		temp.transform.rigidbody.velocity = new Vector3 (-firespeed / 1.414f, -firespeed / 1.414f, 0);
