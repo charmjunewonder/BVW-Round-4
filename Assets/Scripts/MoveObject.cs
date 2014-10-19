@@ -20,6 +20,8 @@ public class MoveObject : MonoBehaviour {
 		if(disappearBeforeMoving){
 			gameObject.renderer.enabled = false;
 		}
+
+		moveObject ();
 	}
 
 	public void moveObject(){
