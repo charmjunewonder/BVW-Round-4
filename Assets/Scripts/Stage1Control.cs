@@ -42,7 +42,7 @@ public class Stage1Control : MonoBehaviour {
 		eship [0].GetComponent<EnemyBehavior> ().sleepTime = 2;
 
 		eship [0].GetComponent<Floating> ().speed = 0.3f;
-		eship [0].GetComponent<Floating> ().last = 1f;
+		eship [0].GetComponent<Floating> ().last = 1;
 
 		StartCoroutine (nextShip ());
 		yield return null;

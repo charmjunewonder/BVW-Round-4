@@ -54,7 +54,7 @@ public class Stage2Control : MonoBehaviour {
 			temp.SetActive(true);
 			temp.GetComponent<BirdBehavior>().direction = -1;
 		}
-		temp.GetComponent<BirdBehavior> ().moveSpeed = 5 + myRandom.aFloat (-2f, 2f);
+		temp.GetComponent<BirdBehavior> ().moveSpeed = 4 + myRandom.aFloat (-2f, 2f);
 		yield return new WaitForSeconds (3 + myRandom.aFloat(-2f, 2f));
 		birdTrigger = true;
 	}
