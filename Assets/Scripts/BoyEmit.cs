@@ -28,7 +28,7 @@ public class BoyEmit : MonoBehaviour {
 	
 	}
 	void emit(){
-		
+		audio.Play ();
 		temp = Instantiate (part, transform.position, Quaternion.identity) as GameObject;  
 		temp.SetActive (true);
 		temp.transform.rigidbody.velocity = new Vector3 (-firespeed / 1.414f, -firespeed / 1.414f, 0);

@@ -24,7 +24,7 @@ public class Stage2Control : MonoBehaviour {
 			                   Quaternion.identity) as GameObject;
 			temp.SetActive(true);
 			temp.GetComponent<BirdBehavior>().direction = 1;
-			temp = Instantiate(cloud, new Vector3(-7, -11, 1), Quaternion.identity) as GameObject;
+			temp = Instantiate(cloud, new Vector3(-7, -11, -5), Quaternion.identity) as GameObject;
 			temp.SetActive(true);
 			init = false;
 			StartCoroutine(gamestart());
@@ -61,7 +61,7 @@ public class Stage2Control : MonoBehaviour {
 
 	IEnumerator genCloud(){
 		cloudNum++;
-		temp = Instantiate(cloud, new Vector3(myRandom.aFloat(-8, 8), -11, 1), Quaternion.identity) as GameObject;
+		temp = Instantiate(cloud, new Vector3(myRandom.aFloat(-8, 8), -11, -5), Quaternion.identity) as GameObject;
 		temp.SetActive(true);
 		yield return new WaitForSeconds (2 + myRandom.aFloat(-2f, 2f));
 		cloudTrigger = true;
