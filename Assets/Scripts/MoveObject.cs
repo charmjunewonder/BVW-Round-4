@@ -33,9 +33,11 @@ public class MoveObject : MonoBehaviour {
 			gameObject.renderer.enabled = true;
 		}
 		while(Vector3.Distance(transform.position, toPosition) > 0.1f){
-			Vector3 direction = transform.position - toPosition;
+			//Vector3 direction = transform.position - toPosition;
+			Vector3 direction = toPosition - transform.position;
+			
 			direction.Normalize();
-			transform.Translate( direction * speed * Time.deltaTime);
+			transform.Translate( direction * speed * Time.deltaTime, Space.World);
 			if(isScale){
 				transform.localScale += new Vector3(scaleSpeed, scaleSpeed, scaleSpeed);
 			}
