@@ -1,6 +1,8 @@
 fileFormatVersion: 2
 guid: fef83217fcb222149808ea99515320a1
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: polluted cloud
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

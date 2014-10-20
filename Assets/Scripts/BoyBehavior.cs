@@ -39,9 +39,11 @@ public class BoyBehavior : MonoBehaviour {
 			transform.Translate(new Vector3(0, -moveSpeed * Time.deltaTime, 0));
 		}
 		
-//		if(useLeapMotion){
-//			Vector currentPosition = handController.getFirstHandPosition();
-//			transform.position = new Vector3(currentPosition.x, currentPosition.y, -5);
-//		}
+		if(useLeapMotion){
+			Vector currentPosition = handController.getFirstHandPosition();
+			float y = Mathf.Clamp((currentPosition.y - 200)/20, -9.496778f, 9.496778f);
+			float x = Mathf.Clamp(currentPosition.x/10, -9.496778f, 9.496778f);
+			transform.position = new Vector3(x, y, -5);
+		}
 	}
 }
