@@ -12,10 +12,10 @@ public class PartBehavior : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		transform.Rotate(new Vector3(rotatespeed * myRandom.aFloat(0, 1), rotatespeed * myRandom.aFloat(0, 1), rotatespeed * myRandom.aFloat(0, 1)));
-		if(transform.position.x < -StaticValues.worldboudary ||
-		   transform.position.x > StaticValues.worldboudary ||
-		   transform.position.y < -StaticValues.worldboudary ||
-		   transform.position.y > StaticValues.worldboudary){
+		if(transform.position.x < -StaticValues.worldboudary_x ||
+		   transform.position.x > StaticValues.worldboudary_x ||
+		   transform.position.y < -StaticValues.worldboudary_y ||
+		   transform.position.y > StaticValues.worldboudary_y){
 			Destroy(gameObject);
 		}
 	}

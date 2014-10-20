@@ -10,8 +10,8 @@ public class EnemyBirdBehavior : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(transform.position.x > StaticValues.worldboudary + 2 || 
-		   transform.position.x < -StaticValues.worldboudary - 2){
+		if(transform.position.x > StaticValues.worldboudary_x + 2 || 
+		   transform.position.x < -StaticValues.worldboudary_x - 2){
 			Debug.Log ("birdDeath");
 			Stage2Control.birdNum --;
 			Destroy(gameObject);

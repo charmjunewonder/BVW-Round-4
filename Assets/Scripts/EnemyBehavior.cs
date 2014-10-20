@@ -17,10 +17,10 @@ public class EnemyBehavior : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		if(true){
-			if(transform.position.x >= StaticValues.worldboudary){
+			if(transform.position.x >= StaticValues.worldboudary_x){
 				direction = -1;
 			}
-			if(transform.position.x <= -StaticValues.worldboudary){
+			if(transform.position.x <= -StaticValues.worldboudary_x){
 				direction = 1;
 			}
 			if(move)

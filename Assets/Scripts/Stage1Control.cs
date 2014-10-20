@@ -49,10 +49,10 @@ public class Stage1Control : MonoBehaviour {
 	}
 	IEnumerator nextShip(){
 		yield return new WaitForSeconds (10);
-		eship [1] = Instantiate (enemyship, new Vector3(10, 7, -5), Quaternion.identity) as GameObject;
+		eship [1] = Instantiate (enemyship, new Vector3(StaticValues.worldboudary_x, 7, -5), Quaternion.identity) as GameObject;
 		eship [1].SetActive (true);
 
-		eship [1].GetComponent<EnemyBehavior> ().moveSpeed = 6;
+		eship [1].GetComponent<EnemyBehavior> ().moveSpeed = 8;
 		eship [1].GetComponent<EnemyBehavior> ().fireTime = 1f;
 		eship [1].GetComponent<EnemyBehavior> ().chargeTime = 1;
 		eship [1].GetComponent<EnemyBehavior> ().sleepTime = 1.5f;

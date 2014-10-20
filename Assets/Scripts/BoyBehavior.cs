@@ -26,16 +26,16 @@ public class BoyBehavior : MonoBehaviour {
 			transform.Translate(new Vector3(0, -moveSpeed * Time.deltaTime, 0));
 		}
 
-		if(transform.position.x >= StaticValues.worldboudary){
+		if(transform.position.x >= StaticValues.worldboudary_x){
 			transform.Translate(new Vector3(-moveSpeed * Time.deltaTime, 0, 0));
 		}
-		if(transform.position.x <= -StaticValues.worldboudary){
+		if(transform.position.x <= -StaticValues.worldboudary_x){
 			transform.Translate(new Vector3(moveSpeed * Time.deltaTime, 0, 0));
 		}
-		if(transform.position.y <= -StaticValues.worldboudary){
+		if(transform.position.y <= -StaticValues.worldboudary_y){
 			transform.Translate(new Vector3(0, moveSpeed * Time.deltaTime, 0));
 		}
-		if(transform.position.y >= StaticValues.worldboudary){
+		if(transform.position.y >= StaticValues.worldboudary_y){
 			transform.Translate(new Vector3(0, -moveSpeed * Time.deltaTime, 0));
 		}
 		

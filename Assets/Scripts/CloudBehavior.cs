@@ -10,7 +10,7 @@ public class CloudBehavior : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(transform.position.y > StaticValues.worldboudary + 1){
+		if(transform.position.y > StaticValues.worldboudary_y + 1){
 			Stage2Control.cloudNum --;
 			Destroy(gameObject);
 		}
