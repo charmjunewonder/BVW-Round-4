@@ -17,7 +17,6 @@ public class FadeOut : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(startfade){
-			print (mesh.material.color.a);
 			if(mesh.material.color.a < 1){
 				mesh.material.color += new Color(0, 0, 0, Time.deltaTime / anim_time);
 			}
