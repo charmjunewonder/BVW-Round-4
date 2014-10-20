@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class BackgroundMove : MonoBehaviour {
+	public FadeOut screen;
 	public float bgSpeed, stopPos;
 	public int loadLevel;
 	// Use this for initialization
@@ -13,8 +14,13 @@ public class BackgroundMove : MonoBehaviour {
 	void Update () {
 		transform.Translate(new Vector3(0, bgSpeed * Time.deltaTime, 0));
 		if(transform.position.y > stopPos){
-			bgSpeed = 0;
-			Application.LoadLevel(loadLevel);
+			StartCoroutine(end ());
 		}
+	}
+	IEnumerator end(){
+		screen.fadeOut();
+		yield return new WaitForSeconds (2f);
+		//bgSpeed = 0;
+		Application.LoadLevel(loadLevel);
 	}
 }

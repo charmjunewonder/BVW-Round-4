@@ -42,7 +42,7 @@ public class Stage2Control : MonoBehaviour {
 	}
 	IEnumerator genBird(){
 		birdNum++;
-		if(myRandom.aInt (0, 1) == 0){
+		if(myRandom.aInt (0, 2) == 0){
 			temp = Instantiate(bird, new Vector3(-StaticValues.worldboudary - 1, myRandom.aFloat(0, -15), -5), 
 			                   Quaternion.identity) as GameObject;
 			temp.SetActive(true);

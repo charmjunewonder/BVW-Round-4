@@ -55,7 +55,7 @@ public class BoyEmit : MonoBehaviour {
 		StartCoroutine (cooling ());
 	}
 	IEnumerator cooling(){
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(1.5f);
 		cooldown = true;
 	}
 }
