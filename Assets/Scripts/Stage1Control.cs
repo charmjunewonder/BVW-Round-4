@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Stage1Control : MonoBehaviour {
 	public GameObject enemyship, myship;
+	public FadeIn fade;
 	public float animspeed;
 	const int enemyMax = 2;
 	int enemyCount = 0;
@@ -10,7 +11,8 @@ public class Stage1Control : MonoBehaviour {
 	GameObject [] eship = new GameObject[enemyMax];
 	// Use this for initialization
 	void Start () {
-		init = true;
+		StartCoroutine (mostBegin ());
+		init = false;
 		start = false;
 
 	}
@@ -30,6 +32,13 @@ public class Stage1Control : MonoBehaviour {
 			start = false;
 			StartCoroutine(firstShip());
 		}
+
+	}
+	IEnumerator mostBegin(){
+		yield return new WaitForSeconds (4);
+		fade.fadeIn ();
+		yield return new WaitForSeconds (2);
+		init = true;
 
 	}
 	IEnumerator firstShip(){
