@@ -21,7 +21,7 @@ public class MoveObject : MonoBehaviour {
 			gameObject.renderer.enabled = false;
 		}
 
-		moveObject ();
+		//moveObject ();
 	}
 
 	public void moveObject(){
