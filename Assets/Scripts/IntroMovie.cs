@@ -7,7 +7,7 @@ public class IntroMovie : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		resize_window_plane ();
+		//resize_window_plane ();
 		mov = (MovieTexture)renderer.material.mainTexture;
 		mov.Play ();
 	}
@@ -18,13 +18,13 @@ public class IntroMovie : MonoBehaviour {
 		float height = 2.0f * Mathf.Tan(0.5f * Camera.main.fieldOfView * Mathf.Deg2Rad) * distance;
 		float width = height * Screen.width / Screen.height;
 		
-		transform.localScale = new Vector3 (width * 0.1f, 1, height * 0.1f);
+		transform.localScale = new Vector3 (width * 0.2f, 1, height * 0.2f);
 	}
 
 	
 	// Update is called once per frame
 	void Update () {
-		if (!mov.isPlaying)
+		if (!mov.isPlaying || Input.GetKeyDown(KeyCode.S))
 			Application.LoadLevel (1);
 	}
 }
