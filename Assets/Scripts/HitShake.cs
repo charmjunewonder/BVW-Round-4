@@ -20,7 +20,7 @@ public class HitShake : MonoBehaviour {
 			cameraShake.Shake();
 			StartCoroutine(cooldown());
 		}
-		else if(finished){
+		else if(!finished){
 			start = false;
 		}
 	}

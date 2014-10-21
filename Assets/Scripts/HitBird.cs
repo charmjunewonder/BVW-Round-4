@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class HitBird : MonoBehaviour {
-	public GameObject breakdown, blast;
+	public GameObject breakdown, blast, birddeath;
 	// Use this for initialization
 	void Start () {
 	
@@ -17,6 +17,8 @@ public class HitBird : MonoBehaviour {
 			GameObject temp;
 			//breakdown.audio.Play();
 			temp = Instantiate(breakdown) as GameObject;
+			temp.SetActive(true);
+			temp = Instantiate(birddeath) as GameObject;
 			temp.SetActive(true);
 			temp = Instantiate(blast, transform.position, Quaternion.identity) as GameObject;
 			temp.SetActive(true);

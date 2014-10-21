@@ -20,6 +20,9 @@ public class FadeIn : MonoBehaviour {
 			if(mesh.material.color.a > 0){
 				mesh.material.color -= new Color(0, 0, 0, Time.deltaTime / anim_time);
 			}
+			else{
+				startfade = false;
+			}
 		}
 	}
 	public void fadeIn(){

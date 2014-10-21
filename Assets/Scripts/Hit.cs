@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Hit : MonoBehaviour {
-	public GameObject breakdown, blast;
+	public GameObject breakdown, blast, birddeath;
 	public HitShake beHit;
 	// Use this for initialization
 	void Start () {
@@ -16,7 +16,12 @@ public class Hit : MonoBehaviour {
 	void OnTriggerEnter(Collider c){
 		if(c.tag == "BoyShip"){
 			beHit.hit();
+
 			GameObject temp;
+			if(gameObject.tag == "Bird"){
+				temp = Instantiate(birddeath) as GameObject;
+				temp.SetActive(true);
+			}
 			//breakdown.audio.Play();
 			temp = Instantiate(breakdown) as GameObject;
 			temp.SetActive(true);
@@ -29,6 +34,10 @@ public class Hit : MonoBehaviour {
 		if(c.tag == "EnemyShip"){
 			GameObject temp;
 			//breakdown.audio.Play();
+			if(gameObject.tag == "Bird"){
+				temp = Instantiate(birddeath) as GameObject;
+				temp.SetActive(true);
+			}
 			temp = Instantiate(breakdown) as GameObject;
 			temp.SetActive(true);
 			temp = Instantiate(blast, transform.position, Quaternion.identity) as GameObject;
