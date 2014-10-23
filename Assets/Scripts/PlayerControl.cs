@@ -17,6 +17,7 @@ public class PlayerControl : MonoBehaviour {
 		dis.z = 0;
 		if(dis.magnitude > threshold){
 			//print (dis.magnitude);
+			rigidbody.velocity = Vector3.zero;
 			transform.Translate(dis.normalized * speed * Time.deltaTime);
 			//target.transform.Translate(-dis.normalized * speed * Time.deltaTime);
 		}
