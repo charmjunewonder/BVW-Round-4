@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Stage2Control : MonoBehaviour {
-	const int birdMax = 3, cloudMax = 6;
+	const int birdMax = 3, cloudMax = 5;
 	public static int birdNum = 0, cloudNum = 0;
 	public GameObject bird, cloud, enemybird, myship;
 	public float animspeed;
@@ -54,7 +54,7 @@ public class Stage2Control : MonoBehaviour {
 			temp.SetActive(true);
 			temp.GetComponent<BirdBehavior>().direction = -1;
 		}
-		temp.GetComponent<BirdBehavior> ().moveSpeed = 4 + myRandom.aFloat (-2f, 2f);
+		temp.GetComponent<BirdBehavior> ().moveSpeed = 4 + myRandom.aFloat (-2f, 1f);
 		yield return new WaitForSeconds (3 + myRandom.aFloat(-2f, 2f));
 		birdTrigger = true;
 	}

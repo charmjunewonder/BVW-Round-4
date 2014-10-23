@@ -4,7 +4,7 @@ using System.Collections;
 public class BackgroundMove : MonoBehaviour {
 	public FadeOut screen;
 	public float bgSpeed, stopPos;
-	public int loadLevel;
+	public string loadLevel;
 	// Use this for initialization
 	void Start () {
 	
