@@ -5,7 +5,7 @@ public class GetSpaceship : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		StartCoroutine (wait ());
+		//StartCoroutine (wait ());
 	}
 	
 	// Update is called once per frame

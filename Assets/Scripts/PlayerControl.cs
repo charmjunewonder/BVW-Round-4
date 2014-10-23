@@ -4,11 +4,11 @@ using System.Collections;
 public class PlayerControl : MonoBehaviour {
 	public float speed;
 	public Transform target;
-
+	public bool controlable;
 	const float threshold = 0.3f; 
 	// Use this for initialization
 	void Start () {
-	
+		controlable = true;
 	}
 	
 	// Update is called once per frame
