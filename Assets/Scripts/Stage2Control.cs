@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Stage2Control : MonoBehaviour {
-	const int birdMax = 3, cloudMax = 5;
+	const int birdMax = 0, cloudMax = 7;
 	public static int birdNum = 0, cloudNum = 0;
 	public GameObject bird, cloud, enemybird, myship;
 	public float animspeed;
@@ -62,6 +62,10 @@ public class Stage2Control : MonoBehaviour {
 	IEnumerator genCloud(){
 		cloudNum++;
 		temp = Instantiate(cloud, new Vector3(myRandom.aFloat(-StaticValues.worldboudary_x + 2, StaticValues.worldboudary_x - 2), -11, -5), Quaternion.identity) as GameObject;
+		if(myRandom.aInt(0,2) == 0)
+			temp.transform.localScale = new Vector3(3,2,20) * myRandom.aFloat (0.9f, 1.5f);
+		else
+			temp.transform.localScale = new Vector3(-3,2,20) * myRandom.aFloat (0.9f, 1.5f);
 		temp.SetActive(true);
 		yield return new WaitForSeconds (2 + myRandom.aFloat(-2f, 2f));
 		cloudTrigger = true;

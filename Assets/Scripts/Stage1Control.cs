@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class Stage1Control : MonoBehaviour {
+	public BackgroundMove bg;
 	public GameObject enemyship, myship;
 	public FadeIn fade;
 	public float animspeed;
@@ -39,6 +40,7 @@ public class Stage1Control : MonoBehaviour {
 		fade.fadeIn ();
 		yield return new WaitForSeconds (2);
 		init = true;
+		bg.startAnim = true;
 
 	}
 	IEnumerator firstShip(){
