@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class FollowMouse : MonoBehaviour {
-
+	public float z;
 	// Use this for initialization
 	void Start () {
 	
@@ -13,7 +13,7 @@ public class FollowMouse : MonoBehaviour {
 		Vector3 pos = Input.mousePosition;
 		pos = Camera.main.ScreenToWorldPoint (pos);
 		//print (pos);
-		pos.z = -10;
+		pos.z = z;
 		transform.position = pos;
 	
 	}
