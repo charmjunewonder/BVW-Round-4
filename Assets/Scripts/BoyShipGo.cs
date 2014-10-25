@@ -34,14 +34,17 @@ public class BoyShipGo : MonoBehaviour {
 	
 	}
 	void OnTriggerEnter(Collider c){
-		if(c.tag == "Player"){
+		if(c.tag == "BoyShip"){
 			//c.transform.Translate(new Vector3(0,0,20));
 			c.GetComponent<MeshRenderer>().renderer.enabled = false;
 			c.GetComponent<PlayerControl>().speed = 0;
+			c.gameObject.transform.GetChild(2).gameObject.SetActive(false);
+			c.gameObject.transform.GetChild(1).gameObject.SetActive(false);
 			StartCoroutine(fire());
 		}
 	}
 	IEnumerator fire(){
+		PoliceAnim.start = true;
 		fireParticle.transform.localPosition = new Vector3 (-1.2f, 0, 0.4f);
 		yield return new WaitForSeconds (1f/4);
 		fireParticle.transform.localPosition = new Vector3 (-1.0f, 0, 0.4f);

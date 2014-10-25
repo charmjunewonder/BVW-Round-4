@@ -1,0 +1,423 @@
+fileFormatVersion: 2
+guid: e2a592a5b21d1cb4183d437a1ca27671
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Boy_Head
+    100002: Boy_Hips
+    100004: Boy_LeftArm
+    100006: Boy_LeftFoot
+    100008: Boy_LeftForeArm
+    100010: Boy_LeftHand
+    100012: Boy_LeftHandMiddle1
+    100014: Boy_LeftHandMiddle2
+    100016: Boy_LeftHandThumb1
+    100018: Boy_LeftHandThumb2
+    100020: Boy_LeftLeg
+    100022: Boy_LeftShoulder
+    100024: Boy_LeftToeBase
+    100026: Boy_LeftUpLeg
+    100028: Boy_Neck
+    100030: Boy_Neck1
+    100032: Boy_Reference
+    100034: Boy_RightArm
+    100036: Boy_RightFoot
+    100038: Boy_RightForeArm
+    100040: Boy_RightHand
+    100042: Boy_RightHandMiddle1
+    100044: Boy_RightHandMiddle2
+    100046: Boy_RightHandThumb1
+    100048: Boy_RightHandThumb2
+    100050: Boy_RightLeg
+    100052: Boy_RightShoulder
+    100054: Boy_RightToeBase
+    100056: Boy_RightUpLeg
+    100058: Boy_Spine
+    100060: Boy_Spine1
+    100062: Boy_Spine2
+    100064: Boy_Spine3
+    100066: //RootNode
+    100068: pCube5
+    400000: Boy_Head
+    400002: Boy_Hips
+    400004: Boy_LeftArm
+    400006: Boy_LeftFoot
+    400008: Boy_LeftForeArm
+    400010: Boy_LeftHand
+    400012: Boy_LeftHandMiddle1
+    400014: Boy_LeftHandMiddle2
+    400016: Boy_LeftHandThumb1
+    400018: Boy_LeftHandThumb2
+    400020: Boy_LeftLeg
+    400022: Boy_LeftShoulder
+    400024: Boy_LeftToeBase
+    400026: Boy_LeftUpLeg
+    400028: Boy_Neck
+    400030: Boy_Neck1
+    400032: Boy_Reference
+    400034: Boy_RightArm
+    400036: Boy_RightFoot
+    400038: Boy_RightForeArm
+    400040: Boy_RightHand
+    400042: Boy_RightHandMiddle1
+    400044: Boy_RightHandMiddle2
+    400046: Boy_RightHandThumb1
+    400048: Boy_RightHandThumb2
+    400050: Boy_RightLeg
+    400052: Boy_RightShoulder
+    400054: Boy_RightToeBase
+    400056: Boy_RightUpLeg
+    400058: Boy_Spine
+    400060: Boy_Spine1
+    400062: Boy_Spine2
+    400064: Boy_Spine3
+    400066: //RootNode
+    400068: pCube5
+    4300000: pCube5
+    7400000: Ready
+    7400002: Idle
+    7400004: Sneak
+    9500000: //RootNode
+    13700000: pCube5
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Ready
+      takeName: Take 001
+      firstFrame: 20
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Boy_Reference
+        weight: 1
+      - path: Boy_Reference/Boy_Hips
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_LeftUpLeg
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_LeftUpLeg/Boy_LeftLeg
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_LeftUpLeg/Boy_LeftLeg/Boy_LeftFoot
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_LeftUpLeg/Boy_LeftLeg/Boy_LeftFoot/Boy_LeftToeBase
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_RightUpLeg
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_RightUpLeg/Boy_RightLeg
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_RightUpLeg/Boy_RightLeg/Boy_RightFoot
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_RightUpLeg/Boy_RightLeg/Boy_RightFoot/Boy_RightToeBase
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_LeftShoulder
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_LeftShoulder/Boy_LeftArm
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_LeftShoulder/Boy_LeftArm/Boy_LeftForeArm
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_LeftShoulder/Boy_LeftArm/Boy_LeftForeArm/Boy_LeftHand
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_LeftShoulder/Boy_LeftArm/Boy_LeftForeArm/Boy_LeftHand/Boy_LeftHandMiddle1
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_LeftShoulder/Boy_LeftArm/Boy_LeftForeArm/Boy_LeftHand/Boy_LeftHandMiddle1/Boy_LeftHandMiddle2
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_LeftShoulder/Boy_LeftArm/Boy_LeftForeArm/Boy_LeftHand/Boy_LeftHandThumb1
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_LeftShoulder/Boy_LeftArm/Boy_LeftForeArm/Boy_LeftHand/Boy_LeftHandThumb1/Boy_LeftHandThumb2
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_Neck
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_Neck/Boy_Neck1
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_Neck/Boy_Neck1/Boy_Head
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_RightShoulder
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_RightShoulder/Boy_RightArm
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_RightShoulder/Boy_RightArm/Boy_RightForeArm
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_RightShoulder/Boy_RightArm/Boy_RightForeArm/Boy_RightHand
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_RightShoulder/Boy_RightArm/Boy_RightForeArm/Boy_RightHand/Boy_RightHandMiddle1
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_RightShoulder/Boy_RightArm/Boy_RightForeArm/Boy_RightHand/Boy_RightHandMiddle1/Boy_RightHandMiddle2
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_RightShoulder/Boy_RightArm/Boy_RightForeArm/Boy_RightHand/Boy_RightHandThumb1
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_RightShoulder/Boy_RightArm/Boy_RightForeArm/Boy_RightHand/Boy_RightHandThumb1/Boy_RightHandThumb2
+        weight: 1
+      - path: pCube5
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 19.8999996
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Boy_Reference
+        weight: 1
+      - path: Boy_Reference/Boy_Hips
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_LeftUpLeg
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_LeftUpLeg/Boy_LeftLeg
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_LeftUpLeg/Boy_LeftLeg/Boy_LeftFoot
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_LeftUpLeg/Boy_LeftLeg/Boy_LeftFoot/Boy_LeftToeBase
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_RightUpLeg
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_RightUpLeg/Boy_RightLeg
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_RightUpLeg/Boy_RightLeg/Boy_RightFoot
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_RightUpLeg/Boy_RightLeg/Boy_RightFoot/Boy_RightToeBase
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_LeftShoulder
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_LeftShoulder/Boy_LeftArm
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_LeftShoulder/Boy_LeftArm/Boy_LeftForeArm
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_LeftShoulder/Boy_LeftArm/Boy_LeftForeArm/Boy_LeftHand
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_LeftShoulder/Boy_LeftArm/Boy_LeftForeArm/Boy_LeftHand/Boy_LeftHandMiddle1
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_LeftShoulder/Boy_LeftArm/Boy_LeftForeArm/Boy_LeftHand/Boy_LeftHandMiddle1/Boy_LeftHandMiddle2
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_LeftShoulder/Boy_LeftArm/Boy_LeftForeArm/Boy_LeftHand/Boy_LeftHandThumb1
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_LeftShoulder/Boy_LeftArm/Boy_LeftForeArm/Boy_LeftHand/Boy_LeftHandThumb1/Boy_LeftHandThumb2
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_Neck
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_Neck/Boy_Neck1
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_Neck/Boy_Neck1/Boy_Head
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_RightShoulder
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_RightShoulder/Boy_RightArm
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_RightShoulder/Boy_RightArm/Boy_RightForeArm
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_RightShoulder/Boy_RightArm/Boy_RightForeArm/Boy_RightHand
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_RightShoulder/Boy_RightArm/Boy_RightForeArm/Boy_RightHand/Boy_RightHandMiddle1
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_RightShoulder/Boy_RightArm/Boy_RightForeArm/Boy_RightHand/Boy_RightHandMiddle1/Boy_RightHandMiddle2
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_RightShoulder/Boy_RightArm/Boy_RightForeArm/Boy_RightHand/Boy_RightHandThumb1
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_RightShoulder/Boy_RightArm/Boy_RightForeArm/Boy_RightHand/Boy_RightHandThumb1/Boy_RightHandThumb2
+        weight: 1
+      - path: pCube5
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Sneak
+      takeName: Take 001
+      firstFrame: 40
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Boy_Reference
+        weight: 1
+      - path: Boy_Reference/Boy_Hips
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_LeftUpLeg
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_LeftUpLeg/Boy_LeftLeg
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_LeftUpLeg/Boy_LeftLeg/Boy_LeftFoot
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_LeftUpLeg/Boy_LeftLeg/Boy_LeftFoot/Boy_LeftToeBase
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_RightUpLeg
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_RightUpLeg/Boy_RightLeg
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_RightUpLeg/Boy_RightLeg/Boy_RightFoot
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_RightUpLeg/Boy_RightLeg/Boy_RightFoot/Boy_RightToeBase
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_LeftShoulder
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_LeftShoulder/Boy_LeftArm
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_LeftShoulder/Boy_LeftArm/Boy_LeftForeArm
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_LeftShoulder/Boy_LeftArm/Boy_LeftForeArm/Boy_LeftHand
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_LeftShoulder/Boy_LeftArm/Boy_LeftForeArm/Boy_LeftHand/Boy_LeftHandMiddle1
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_LeftShoulder/Boy_LeftArm/Boy_LeftForeArm/Boy_LeftHand/Boy_LeftHandMiddle1/Boy_LeftHandMiddle2
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_LeftShoulder/Boy_LeftArm/Boy_LeftForeArm/Boy_LeftHand/Boy_LeftHandThumb1
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_LeftShoulder/Boy_LeftArm/Boy_LeftForeArm/Boy_LeftHand/Boy_LeftHandThumb1/Boy_LeftHandThumb2
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_Neck
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_Neck/Boy_Neck1
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_Neck/Boy_Neck1/Boy_Head
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_RightShoulder
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_RightShoulder/Boy_RightArm
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_RightShoulder/Boy_RightArm/Boy_RightForeArm
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_RightShoulder/Boy_RightArm/Boy_RightForeArm/Boy_RightHand
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_RightShoulder/Boy_RightArm/Boy_RightForeArm/Boy_RightHand/Boy_RightHandMiddle1
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_RightShoulder/Boy_RightArm/Boy_RightForeArm/Boy_RightHand/Boy_RightHandMiddle1/Boy_RightHandMiddle2
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_RightShoulder/Boy_RightArm/Boy_RightForeArm/Boy_RightHand/Boy_RightHandThumb1
+        weight: 1
+      - path: Boy_Reference/Boy_Hips/Boy_Spine/Boy_Spine1/Boy_Spine2/Boy_Spine3/Boy_RightShoulder/Boy_RightArm/Boy_RightForeArm/Boy_RightHand/Boy_RightHandThumb1/Boy_RightHandThumb2
+        weight: 1
+      - path: pCube5
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: Boy_Hips
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
