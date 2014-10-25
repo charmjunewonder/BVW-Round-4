@@ -4,7 +4,7 @@ using System.Collections;
 public class ScannerBehavior : MonoBehaviour {
 	public Vector3 destination;
 	public Transform wave;
-	public GameObject apple;
+	public GameObject apple, radio;
 	public LineRenderer target;
 	public float MoveSpeed, AnimSpeed;
 	Vector3 scalar;
@@ -61,6 +61,7 @@ public class ScannerBehavior : MonoBehaviour {
 			target.SetPosition(0, transform.position);
 			target.SetPosition(1, transform.position + dis.normalized * 2.3f);
 			AppleSpotted.SpotNum++;
+			//radio.GetComponent<AutoRotate>().RotateSpeed = 0;
 		}
 		focus = true;
 	}

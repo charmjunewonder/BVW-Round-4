@@ -20,15 +20,18 @@ public class EmitScanner : MonoBehaviour {
 		if(scaning){
 			if(Input.GetMouseButton(0) && cooldown){
 				transform.GetChild(0).gameObject.SetActive(false);
+				transform.GetChild(1).gameObject.SetActive(false);
 				cooldown = false;
 				StartCoroutine(launch());
 			}
 			else if(cooldown){
 				transform.GetChild(0).gameObject.SetActive(true);
+				transform.GetChild(1).gameObject.SetActive(true);
 			}
 		}
 		if(confirm){
 			transform.GetChild(0).gameObject.SetActive(false);
+			//transform.GetChild(1).gameObject.SetActive(false);
 			scaning = false;
 			Vector3 dis = apple.position - transform.position;
 			if(Input.GetMouseButton(0)&&dis.magnitude < threshold){
