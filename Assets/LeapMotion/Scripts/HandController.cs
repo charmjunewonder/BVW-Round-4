@@ -263,6 +263,24 @@ public class HandController : MonoBehaviour {
     return grabOrNot;
   }
 
+	public bool getHandGrabApple(){
+		Frame frame = GetFrame();
+		HandList hands = frame.Hands;
+		Hand firstHand = hands[0];
+		float currentGrab = firstHand.GrabStrength;
+		float difference = currentGrab - previousGrab;
+		bool grabOrNot = difference > 0.3f & currentGrab > 0.5f;
+		previousGrab = currentGrab;
+		return grabOrNot;
+	}
+
+	public Hand getHand(){
+		Frame frame = GetFrame();
+		HandList hands = frame.Hands;
+		Hand firstHand = hands[0];
+		return firstHand;
+	}
+
   void FixedUpdate() {
     if (leap_controller_ == null)
       return;
