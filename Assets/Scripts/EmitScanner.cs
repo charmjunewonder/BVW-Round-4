@@ -69,6 +69,6 @@ public class EmitScanner : MonoBehaviour {
 		yield return new WaitForSeconds(1);
 		fade.fadeOut ();
 		yield return new WaitForSeconds (3);
-		Application.LoadLevel("Ends");
+		Application.LoadLevel("GrabApple");
 	}
 }

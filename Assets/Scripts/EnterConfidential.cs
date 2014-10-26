@@ -23,6 +23,6 @@ public class EnterConfidential : MonoBehaviour {
 		player.speed = 0;
 		fade.fadeOut ();
 		yield return new WaitForSeconds(1);
-		Application.LoadLevel ("ConfidentialRoom");
+		Application.LoadLevel ("SecretRoom");
 	}
 }
