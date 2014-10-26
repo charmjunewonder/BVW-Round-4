@@ -16,7 +16,7 @@ public class TurnOntheLight : MonoBehaviour {
 	}
 	public void turnOn(){
 		vision.transform.localScale *= 1.2f;
-		DirectionLight.intensity *= 2.5f;
+		DirectionLight.intensity *= 1.5f;
 		hand.anim = false;
 		Destroy (gameObject);
 	}
