@@ -30,7 +30,7 @@ public class PlayerControl : MonoBehaviour {
 		}
 	}
 	void BoyDirection(){
-		print (boy.eulerAngles);
+		//print (boy.eulerAngles);
 		Vector3 dir = target.position - boy.position;
 		if(dir.y / Mathf.Abs(dir.x) > 2){
 			boy.eulerAngles = new Vector3(0, 0, 0);

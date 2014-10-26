@@ -18,7 +18,7 @@ public class HandAnimation : MonoBehaviour {
 				transition = false;
 				hand1.SetActive(false);
 				hand2.SetActive(true);
-				StartCoroutine(wait ());
+				StartCoroutine(wait (0.9f));
 
 			}
 			else{
@@ -26,12 +26,12 @@ public class HandAnimation : MonoBehaviour {
 				transition = false;
 				hand2.SetActive(false);
 				hand1.SetActive(true);
-				StartCoroutine(wait ());
+				StartCoroutine(wait (0.3f));
 			}
 		}
 	}
-	IEnumerator wait(){
-		yield return new WaitForSeconds (0.6f);
+	IEnumerator wait(float t){
+		yield return new WaitForSeconds (t);
 		transition = true;
 	}
 }
