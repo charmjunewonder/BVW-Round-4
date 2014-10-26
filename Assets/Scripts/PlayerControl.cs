@@ -16,6 +16,9 @@ public class PlayerControl : MonoBehaviour {
 	void Update () {
 		Vector3 dis = target.position - transform.position;
 		dis.z = 0;
+		//boy.LookAt(target, Vector3.back);
+		//boy.eulerAngles = new Vector3(boy.eulerAngles.x, boy.eulerAngles.y, 0);
+		//boy.eulerAngles.z = 0;
 		BoyDirection ();
 		if(dis.magnitude > threshold){
 			boyAnim.SetBool("Walk", true);
