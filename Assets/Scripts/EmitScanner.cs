@@ -20,13 +20,13 @@ public class EmitScanner : MonoBehaviour {
 		if(scaning){
 			if(Input.GetMouseButton(0) && cooldown){
 				transform.GetChild(0).gameObject.SetActive(false);
-				transform.GetChild(1).gameObject.SetActive(false);
+				//transform.GetChild(1).gameObject.SetActive(false);
 				cooldown = false;
 				StartCoroutine(launch());
 			}
 			else if(cooldown){
 				transform.GetChild(0).gameObject.SetActive(true);
-				transform.GetChild(1).gameObject.SetActive(true);
+				//transform.GetChild(1).gameObject.SetActive(true);
 			}
 		}
 		if(confirm){
@@ -34,6 +34,7 @@ public class EmitScanner : MonoBehaviour {
 			//transform.GetChild(1).gameObject.SetActive(false);
 			scaning = false;
 			Vector3 dis = apple.position - transform.position;
+			dis.z = 0;
 			if(Input.GetMouseButton(0)&&dis.magnitude < threshold){
 				confirm = false;
 				end = true;
@@ -65,7 +66,7 @@ public class EmitScanner : MonoBehaviour {
 		cooldown = true;
 	}
 	IEnumerator ending(){
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(1);
 		fade.fadeOut ();
 		yield return new WaitForSeconds (3);
 		Application.LoadLevel("Ends");
