@@ -5,27 +5,22 @@ public class GrabApple : MonoBehaviour {
 
 	public HandController handController;
 	public GameObject apple;
-	public Vector3 cameraOriginalPosition;
-	public Vector3 cameraApplePosition;
-	public float moveInterval = 0.03f;
-	public float speed = 10.0f;
+	public GameObject background;
 	private bool grabSuccessful = false;
 	private bool startToGrab = false;
 	// Use this for initialization
 	void Start () {
-		Camera.main.transform.position = cameraOriginalPosition;
-		StartCoroutine(moveCamera());
+		background.transform.localScale = new Vector3(1, 1, 1);
+
+		StartCoroutine(scaleImage());
 	}
 
-	IEnumerator moveCamera(){
-		Camera camera = Camera.main;
+	IEnumerator scaleImage(){
 		yield return new WaitForSeconds(2.0f);
-		while(Vector3.Distance(camera.transform.position, cameraApplePosition) > 0.1f){
-			Vector3 direction = cameraApplePosition - camera.transform.position;
-			
-			direction.Normalize();
-			camera.transform.Translate( direction * speed * Time.deltaTime, Space.World);
-			yield return new WaitForSeconds(moveInterval);
+		for(int i = 0; i < 20; i++){
+			background.transform.localScale += new Vector3(0.1f, 0.1f, 0f);
+			yield return new WaitForSeconds(0.03f);
+
 		}
 		startToGrab = true;
 	}
@@ -87,14 +82,10 @@ public class GrabApple : MonoBehaviour {
 			timerCount ++;
 			if(timerCount > 20 || apple == null){
 				Debug.Log("End");
+				Application.LoadLevel("Ends");
 			}
 			yield return new WaitForSeconds(0.1f);
 		}
 	}
 
-    void OnTriggerEnter(Collider other) {
-		//Debug.Log("fjsla");
-		//if(collider.gameObject.GetComponent<HandController>().getHandGrab()){
-		//}
-	}
 }
