@@ -7,16 +7,20 @@ public class SecretRoomController : MonoBehaviour {
 	public HandController handController;
 	public GameObject monitor;
 	public GameObject monitorCenter;
-	public Vector3 cameraOriginalPosition;
-	public Vector3 cameraApplePosition;
+	public Vector3 backgroundOriginalPosition;
+	public Vector3 backgroundPlayPosition;
 	public float moveInterval = 0.03f;
-	public float speed = 10.0f;
+	public float speed = 20.0f;
+	public GameObject background;
+	public CubeCollider cubeCollider;
 	private bool grabSuccessful = false;
 	private bool startToMove = false;
 	// Use this for initialization
 	void Start () {
 		monitor.renderer.enabled = false;
-		Camera.main.transform.position = cameraOriginalPosition;
+		background.transform.position = backgroundOriginalPosition;
+		background.transform.localScale = new Vector3(1, 1, 1);
+
 		StartCoroutine("flashLightSlow");
 	}
 
@@ -34,39 +38,50 @@ public class SecretRoomController : MonoBehaviour {
 			monitor.renderer.enabled = false;
 			yield return new WaitForSeconds(0.5f);
 			monitor.renderer.enabled = true;
-			yield return new WaitForSeconds(0.2f);
+			yield return new WaitForSeconds(0.1f);
 		}
 	}
 
-	IEnumerator moveCamera(){
-		Camera camera = Camera.main;
-		yield return new WaitForSeconds(2.0f);
-		startToMove = true;
-		while(Vector3.Distance(camera.transform.position, cameraApplePosition) > 0.1f){
-			Vector3 direction = cameraApplePosition - camera.transform.position;
+	IEnumerator moveBackground(){
+		yield return new WaitForSeconds(2f);
+
+		while(Vector3.Distance(background.transform.position, backgroundPlayPosition) > 0.1f){
+			Vector3 direction = backgroundPlayPosition - background.transform.position;
 			
 			direction.Normalize();
-			camera.transform.Translate( direction * speed * Time.deltaTime, Space.World);
+			background.transform.Translate( direction * speed * Time.deltaTime, Space.World);
 			yield return new WaitForSeconds(moveInterval);
 		}
 		StopCoroutine("flashLightFast");
 		Debug.Log("Play Movie");
 		//startToPlay = true;
 	}
+
+	IEnumerator scaleBackground(){
+		yield return new WaitForSeconds(2.0f);
+		for(int i = 0; i < 13; i++){
+			background.transform.localScale += new Vector3(0.1f, 0.1f, 0f);
+			yield return new WaitForSeconds(0.03f);
+			
+		}
+	}
 	
 	// Update is called once per frame
 	void Update () {
 		
-		if(!startToMove || handController == null)
+		if(handController == null)
 			return;
-		Vector handPosition = handController.GetComponent<HandController>().getFirstHandPosition();
-		handPosition *= 0.001f;
-		if( (Mathf.Abs(handPosition.x - monitorCenter.transform.position.x) < 2.3f
-			|| Mathf.Abs(handPosition.y - monitorCenter.transform.position.y) < 1.0f)
-		 	&& !startToMove){
+		if(!cubeCollider.isTriggered)
+			return;
+		cubeCollider.gameObject.SetActive(false);
+
+		if(!startToMove){
 			StopCoroutine("flashLightSlow");
 			StartCoroutine("flashLightFast");
-			StartCoroutine(moveCamera());
+			startToMove = true;
+			StartCoroutine(moveBackground());
+			StartCoroutine(scaleBackground());
+
 		}
 	}
 }
