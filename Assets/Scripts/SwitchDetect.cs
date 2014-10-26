@@ -4,6 +4,7 @@ using System.Collections;
 public class SwitchDetect : MonoBehaviour {
 	public HandAnimation hand;
 	public SwitchControl on;
+	public TurnOntheLight light;
 	// Use this for initialization
 	void Start () {
 	
@@ -14,7 +15,7 @@ public class SwitchDetect : MonoBehaviour {
 	
 	}
 	void OnTriggerEnter(Collider c){
-		if(c.tag == "Switch"){
+		if(c.tag == "Switch"||c.tag == "Light"){
 			hand.anim = true;
 		}
 	}
@@ -25,9 +26,14 @@ public class SwitchDetect : MonoBehaviour {
 				on.turnOn();
 			}
 		}
+		if(c.tag == "Light"){
+			if(Input.GetMouseButton(0)){
+				light.turnOn();
+			}
+		}
 	}
 	void OnTriggerExit(Collider c){
-		if(c.tag == "Switch"){
+		if(c.tag == "Switch"||c.tag == "Light"){
 			hand.anim = false;
 		}
 	}
