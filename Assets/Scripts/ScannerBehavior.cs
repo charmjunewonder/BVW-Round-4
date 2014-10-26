@@ -57,6 +57,7 @@ public class ScannerBehavior : MonoBehaviour {
 		emit = false;
 		wave.transform.localScale = Vector3.one * 2;
 		Vector3 dis = apple.transform.position - transform.position; 
+		dis.z = 0;
 		if(dis.magnitude < 2.3){
 			target.SetPosition(0, transform.position);
 			target.SetPosition(1, transform.position + dis.normalized * 2.3f);
