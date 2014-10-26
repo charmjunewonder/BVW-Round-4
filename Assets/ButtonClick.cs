@@ -21,6 +21,13 @@ public class ButtonClick : MonoBehaviour {
 	}
 
 	void OnCollisionExit(Collision collision){
+		transform.position = originPosition;
+
+	}
+
+	void OnCollisionEnter(Collision collision){
+		Debug.Log("play");
+
 		if(collision.gameObject == plane){
 			this.renderer.enabled = false;
 			Debug.Log("kdfja");

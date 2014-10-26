@@ -274,7 +274,7 @@ public class HandController : MonoBehaviour {
 		return grabOrNot;
 	}
 
-	public Hand getHand(){
+	public Hand getFirstHand(){
 		Frame frame = GetFrame();
 		HandList hands = frame.Hands;
 		Hand firstHand = hands[0];
