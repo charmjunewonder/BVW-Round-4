@@ -36,6 +36,7 @@ public class BoyShipGo : MonoBehaviour {
 	void OnTriggerEnter(Collider c){
 		if(c.tag == "BoyShip"){
 			//c.transform.Translate(new Vector3(0,0,20));
+			audio.Play();
 			c.GetComponent<MeshRenderer>().renderer.enabled = false;
 			c.GetComponent<PlayerControl>().speed = 0;
 			c.gameObject.transform.GetChild(2).gameObject.SetActive(false);

@@ -18,6 +18,7 @@ public class TurnOntheLight : MonoBehaviour {
 		vision.transform.localScale *= 1.2f;
 		DirectionLight.intensity *= 1.5f;
 		hand.anim = false;
+		audio.Play();
 		Destroy (gameObject);
 	}
 

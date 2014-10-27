@@ -13,7 +13,7 @@ public class PoliceGetCollided : MonoBehaviour {
 	
 	}
 
-	void OnTriggerEnter(Collider other){
+	void OnCollisionEnter (Collision other){
 		if(other.gameObject.tag == "BoyShip"){
 			if(!audio.isPlaying){
 				audio.Play();

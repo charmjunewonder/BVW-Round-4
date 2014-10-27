@@ -12,6 +12,7 @@ public class EmitScanner : MonoBehaviour {
 	bool cooldown, end;
 	float threshold = 0.2f, AnimSpeed = 1, MoveSpeed = 3;
 	Vector3 scalar;
+	public AudioClip[] audios;
 	// Use this for initialization
 	void Start () {
 		cooldown = true;
@@ -77,7 +78,12 @@ public class EmitScanner : MonoBehaviour {
 		temp = Instantiate (scanner, boyship.position, Quaternion.identity) as GameObject;
 		temp.SetActive (true);
 		temp.GetComponent<ScannerBehavior> ().destination = transform.position;
-		yield return new WaitForSeconds (3);
+		audio.clip = audios[0];
+		audio.Play();
+		yield return new WaitForSeconds (0.5f);
+		audio.clip = audios[1];
+		audio.Play();
+		yield return new WaitForSeconds (2.5f);
 		cooldown = true;
 	}
 	IEnumerator ending(){
