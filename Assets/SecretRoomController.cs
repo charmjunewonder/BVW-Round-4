@@ -54,6 +54,7 @@ public class SecretRoomController : MonoBehaviour {
 		}
 		StopCoroutine("flashLightFast");
 		Debug.Log("Play Movie");
+		Application.LoadLevel("GamePlay-StageEmergency");
 		//startToPlay = true;
 	}
 
@@ -63,6 +64,18 @@ public class SecretRoomController : MonoBehaviour {
 			background.transform.localScale += new Vector3(0.1f, 0.1f, 0f);
 			yield return new WaitForSeconds(0.03f);
 			
+		}
+	}
+
+	void hideHand(){
+		handController.hideHands = true;
+		GameObject rightHandG = GameObject.Find("CleanRobotRightHand(Clone)");
+		if(rightHandG != null){
+			Destroy(rightHandG);
+		}
+		GameObject leftHandG = GameObject.Find("CleanRobotLeftHand(Clone)");
+		if(leftHandG != null){
+			Destroy(leftHandG);
 		}
 	}
 	
@@ -79,6 +92,7 @@ public class SecretRoomController : MonoBehaviour {
 			StopCoroutine("flashLightSlow");
 			StartCoroutine("flashLightFast");
 			startToMove = true;
+			hideHand();
 			StartCoroutine(moveBackground());
 			StartCoroutine(scaleBackground());
 

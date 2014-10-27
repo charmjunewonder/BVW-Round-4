@@ -36,7 +36,7 @@ public class HandController : MonoBehaviour {
   public TextAsset recordingAsset;
   public float recorderSpeed = 1.0f;
   public bool recorderLoop = true;
-  
+	public bool hideHands = false;
   float previousGrab = 0.0f;
 
   LeapRecorder recorder_ = new LeapRecorder();
@@ -241,6 +241,7 @@ public class HandController : MonoBehaviour {
     
     UpdateRecorder();
     Frame frame = GetFrame();
+		if(!hideHands)
     UpdateHandModels(hand_graphics_, frame.Hands, leftGraphicsModel, rightGraphicsModel);
   }
   

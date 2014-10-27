@@ -90,6 +90,8 @@ public class HandControllerEditor : Editor {
   public override void OnInspectorGUI() {
     HandController controller = (HandController)target;
 
+		controller.hideHands = EditorGUILayout.Toggle("Hide Hands",
+		                                              controller.hideHands);
     controller.separateLeftRight = EditorGUILayout.Toggle("Separate Left/Right",
                                                           controller.separateLeftRight);
 

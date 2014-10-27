@@ -6,7 +6,7 @@ public class PlayerControl : MonoBehaviour {
 	public Transform boy, target;
 	public bool controlable;
 	public Animator boyAnim;
-	const float threshold = 0.3f; 
+	const float threshold = 0.5f; 
 	// Use this for initialization
 	void Start () {
 		controlable = true;
@@ -15,6 +15,7 @@ public class PlayerControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Vector3 dis = target.position - transform.position;
+//		Debug.Log(target.position);
 		dis.z = 0;
 		//boy.LookAt(target, Vector3.back);
 		//boy.eulerAngles = new Vector3(boy.eulerAngles.x, boy.eulerAngles.y, 0);

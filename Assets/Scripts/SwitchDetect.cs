@@ -5,6 +5,9 @@ public class SwitchDetect : MonoBehaviour {
 	public HandAnimation hand;
 	public SwitchControl on;
 	public TurnOntheLight light;
+	public HandController handController;
+	public bool useLeapMotion = false;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -22,14 +25,30 @@ public class SwitchDetect : MonoBehaviour {
 	void OnTriggerStay(Collider c){
 		if(c.tag == "Switch"){
 			//print ("on");
-			if(Input.GetMouseButton(0)){
-				on.turnOn();
+			if(useLeapMotion){
+				if(handController.getHandGrabApple()){
+					on.turnOn();
+				}
+				
+			} else{
+				if(Input.GetMouseButton(0)){
+					on.turnOn();
+				}
 			}
+
 		}
 		if(c.tag == "Light"){
-			if(Input.GetMouseButton(0)){
-				light.turnOn();
+			if(useLeapMotion){
+				if(handController.getHandGrabApple()){
+					light.turnOn();
+				}
+				
+			} else{
+				if(Input.GetMouseButton(0)){
+					light.turnOn();
+				}
 			}
+
 		}
 	}
 	void OnTriggerExit(Collider c){

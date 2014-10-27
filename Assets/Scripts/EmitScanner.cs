@@ -5,6 +5,8 @@ public class EmitScanner : MonoBehaviour {
 	public GameObject scanner;
 	public Transform boyship, apple;
 	public FadeOut fade;
+	public HandController handController;
+	public bool useLeapMotion = false;
 	GameObject temp;
 	public bool scaning, confirm;
 	bool cooldown, end;
@@ -17,8 +19,15 @@ public class EmitScanner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 		if(scaning){
-			if(Input.GetMouseButton(0) && cooldown){
+			bool doEmit = false;
+			if(useLeapMotion){
+				doEmit = handController.getHandGrab();
+			} else{
+				doEmit = Input.GetMouseButton(0);
+			}
+			if(doEmit && cooldown){
 				transform.GetChild(0).gameObject.SetActive(false);
 				//transform.GetChild(1).gameObject.SetActive(false);
 				cooldown = false;
@@ -30,12 +39,18 @@ public class EmitScanner : MonoBehaviour {
 			}
 		}
 		if(confirm){
+			bool doConfirm = false;
+			if(useLeapMotion){
+				doConfirm = handController.getHandGrabApple();
+			} else{
+				doConfirm = Input.GetMouseButton(0);
+			}
 			transform.GetChild(0).gameObject.SetActive(false);
 			//transform.GetChild(1).gameObject.SetActive(false);
 			scaning = false;
 			Vector3 dis = apple.position - transform.position;
 			dis.z = 0;
-			if(Input.GetMouseButton(0)&&dis.magnitude < threshold){
+			if(doConfirm&&dis.magnitude < 0.5f){
 				confirm = false;
 				end = true;
 				StartCoroutine(ending());
