@@ -13,6 +13,9 @@ public class SecretRoomController : MonoBehaviour {
 	public float speed = 20.0f;
 	public GameObject background;
 	public CubeCollider cubeCollider;
+	public MovieTexture[] reports;
+	public Texture[] dateOfReports;
+	public GameObject moviePlane;
 	private bool grabSuccessful = false;
 	private bool startToMove = false;
 	// Use this for initialization
@@ -22,6 +25,8 @@ public class SecretRoomController : MonoBehaviour {
 		background.transform.localScale = new Vector3(1, 1, 1);
 
 		StartCoroutine("flashLightSlow");
+		StartCoroutine (playMovie ());
+
 	}
 
 	IEnumerator flashLightSlow(){
@@ -54,7 +59,7 @@ public class SecretRoomController : MonoBehaviour {
 		}
 		StopCoroutine("flashLightFast");
 		Debug.Log("Play Movie");
-		Application.LoadLevel("GamePlay-StageEmergency");
+		StartCoroutine (playMovie ());
 		//startToPlay = true;
 	}
 
@@ -65,6 +70,32 @@ public class SecretRoomController : MonoBehaviour {
 			yield return new WaitForSeconds(0.03f);
 			
 		}
+	}
+
+	IEnumerator playMovie(){
+		int[] time = {20, 7};
+		for (int i = 0; i < 2; ++i) {
+			moviePlane.renderer.material.mainTexture = dateOfReports[i];
+
+			for(int j = 0; j < 20; ++j){
+				moviePlane.renderer.material.color -= new Color(0, 0, 0, Time.deltaTime*2);
+				yield return new WaitForSeconds(0.1f);
+
+			}
+
+			moviePlane.renderer.material.color += new Color(0, 0, 0, 1);
+
+			moviePlane.renderer.material.mainTexture = reports[i];
+			reports [i].Play ();
+			audio.clip = reports [i].audioClip;
+			audio.Play ();
+			
+			yield return new WaitForSeconds(time[i]);
+		}
+		Debug.Log("Play Movie");
+
+		Application.LoadLevel("GamePlay-StageEmergency");
+
 	}
 
 	void hideHand(){
