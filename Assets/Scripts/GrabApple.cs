@@ -15,6 +15,7 @@ public class GrabApple : MonoBehaviour {
 		background.transform.localScale = new Vector3(1, 1, 1);
 		backgroundPlane.renderer.material.mainTexture = backgrounds[0];
 		StartCoroutine(scaleImage());
+		handController.hideHands = true;
 	}
 
 	IEnumerator scaleImage(){
@@ -27,6 +28,8 @@ public class GrabApple : MonoBehaviour {
 		}
 		boy.SetActive(false);
 		startToGrab = true;
+		handController.hideHands = false;
+
 	}
 	
 	// Update is called once per frame
@@ -82,14 +85,7 @@ public class GrabApple : MonoBehaviour {
 
 	}
 	IEnumerator scaleImageBack(){
-
-		for(int i = 0; i < 20; i++){
-			background.transform.localScale -= new Vector3(0.1f, 0.1f, 0f);
-			yield return new WaitForSeconds(0.03f);
-			
-		}
-		boy.SetActive(true);
-		boy.GetComponent<GrabAppleBoy>().back = true;
+		yield return new WaitForSeconds(3f);
 
 		handController.hideHands = true;
 		GameObject rightHandG = GameObject.Find("CleanRobotRightHand(Clone)");
@@ -100,6 +96,16 @@ public class GrabApple : MonoBehaviour {
 		if(leftHandG != null){
 			Destroy(leftHandG);
 		}	
+
+		for(int i = 0; i < 20; i++){
+			background.transform.localScale -= new Vector3(0.1f, 0.1f, 0f);
+			yield return new WaitForSeconds(0.03f);
+			
+		}
+		boy.SetActive(true);
+		boy.GetComponent<GrabAppleBoy>().back = true;
+
+
 	}
 	IEnumerator loadNextLevel(){
 		StartCoroutine(scaleImageBack());
