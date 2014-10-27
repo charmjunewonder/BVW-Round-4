@@ -19,7 +19,7 @@ public class TurnOntheLight : MonoBehaviour {
 		DirectionLight.intensity *= 1.5f;
 		hand.anim = false;
 		audio.Play();
-		Destroy (gameObject);
+		transform.Translate(new Vector3(20, 0, 0));
 	}
 
 }

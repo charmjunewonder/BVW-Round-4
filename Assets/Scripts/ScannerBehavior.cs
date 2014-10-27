@@ -6,6 +6,7 @@ public class ScannerBehavior : MonoBehaviour {
 	public Transform wave;
 	public GameObject apple, radio;
 	public LineRenderer target;
+	public GameObject t;
 	public float MoveSpeed, AnimSpeed;
 	Vector3 scalar;
 	bool move, scan, emit, focus;
@@ -59,6 +60,7 @@ public class ScannerBehavior : MonoBehaviour {
 		Vector3 dis = apple.transform.position - transform.position; 
 		dis.z = 0;
 		if(dis.magnitude < 2.3){
+			t.SetActive(true);
 			target.SetPosition(0, transform.position);
 			target.SetPosition(1, transform.position + dis.normalized * 2.3f);
 			AppleSpotted.SpotNum++;
