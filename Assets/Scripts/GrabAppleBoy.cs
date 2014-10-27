@@ -20,6 +20,7 @@ public class GrabAppleBoy : MonoBehaviour {
 				transform.Translate (new Vector3(speed * Time.deltaTime, 0, 0));
 			}
 			else{
+				audio.Stop();
 				boy.SetBool("Walk",false);
 				init = false;
 				model.transform.Rotate(new Vector3(0, -90, 0));
@@ -31,6 +32,7 @@ public class GrabAppleBoy : MonoBehaviour {
 			back = false;
 			model.transform.Rotate (new Vector3(0, -90, 0));
 			go = true;
+			audio.Play();
 		}
 		if(go){
 			if(transform.position.x > 0){
@@ -38,6 +40,7 @@ public class GrabAppleBoy : MonoBehaviour {
 				transform.Translate (new Vector3(-speed * Time.deltaTime, 0, 0));
 			}
 			else{
+				audio.Stop ();
 				boy.SetBool("Walk", false);
 				back = false;
 				go = false;
@@ -46,9 +49,15 @@ public class GrabAppleBoy : MonoBehaviour {
 			}
 		}
 		if(rise){
+			StartCoroutine(startSound());
 			ship.transform.Translate(0, speed * Time.deltaTime, 0);
 			fade.fadeOut();
 		}
+	}
+	IEnumerator startSound(){
+
+		ship.audio.Play();
+		yield return new WaitForSeconds(1);
 	}
 
 }

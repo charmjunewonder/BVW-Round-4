@@ -19,6 +19,7 @@ public class EnterSpaceShip : MonoBehaviour {
 		}
 	}
 	IEnumerator EnterNext(){
+		audio.Play ();
 		fade.gameObject.SetActive (true);
 		player.speed = 0;
 		fade.fadeOut ();
