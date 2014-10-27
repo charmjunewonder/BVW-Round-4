@@ -17,5 +17,6 @@ public class SwitchControl : MonoBehaviour {
 		LightOff.SetActive (false);
 		LightOn.SetActive (true);
 		s.SetBool ("On", true);
+		audio.Play();
 	}
 }
