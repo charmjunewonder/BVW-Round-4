@@ -51,14 +51,14 @@ public class EmitScanner : MonoBehaviour {
 			scaning = false;
 			Vector3 dis = apple.position - transform.position;
 			dis.z = 0;
-			if(doConfirm&&dis.magnitude < 0.5f){
-				confirm = false;
-				end = true;
-				StartCoroutine(ending());
-			}                                                    
+//			if(doConfirm&&dis.magnitude < 0.5f){
+//				confirm = false;
+//				end = true;
+			StartCoroutine(ending());
+			//}                                                    
 		}
 		if(end){
-			Vector3 dis = apple.position - boyship.position;
+			Vector3 dis = apple.position + new Vector3(-9,3,0) - boyship.position;
 			dis.z = 0;
 			if(dis.magnitude > threshold){
 				scalar = boyship.localScale;
@@ -87,6 +87,10 @@ public class EmitScanner : MonoBehaviour {
 		cooldown = true;
 	}
 	IEnumerator ending(){
+		yield return new WaitForSeconds (1);
+		confirm = false;
+		end = true;
+
 		yield return new WaitForSeconds(1);
 		fade.fadeOut ();
 		yield return new WaitForSeconds (3);
