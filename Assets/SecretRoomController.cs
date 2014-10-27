@@ -14,7 +14,9 @@ public class SecretRoomController : MonoBehaviour {
 	public GameObject background;
 	public CubeCollider cubeCollider;
 	public MovieTexture[] reports;
-	public Texture[] dateOfReports;
+	public Texture[] date2200;
+	public Texture[] date2499;
+	public AudioClip[] sounds;
 	public GameObject moviePlane;
 	private bool grabSuccessful = false;
 	private bool startToMove = false;
@@ -23,9 +25,10 @@ public class SecretRoomController : MonoBehaviour {
 		monitor.renderer.enabled = false;
 		background.transform.position = backgroundOriginalPosition;
 		background.transform.localScale = new Vector3(1, 1, 1);
+		moviePlane.renderer.material.color -= new Color(0, 0, 0, 1);
 
 		StartCoroutine("flashLightSlow");
-		StartCoroutine (playMovie ());
+		//StartCoroutine (playMovie ());
 
 	}
 
@@ -74,8 +77,22 @@ public class SecretRoomController : MonoBehaviour {
 
 	IEnumerator playMovie(){
 		int[] time = {20, 7};
+		moviePlane.renderer.material.color += new Color(0, 0, 0, 1);
+
 		for (int i = 0; i < 2; ++i) {
-			moviePlane.renderer.material.mainTexture = dateOfReports[i];
+			if(i == 0){
+				for(int n = 0; n < 10; ++n){
+					moviePlane.renderer.material.mainTexture = date2200[n];
+					yield return new WaitForSeconds(0.3f);
+
+				}
+			} else if(i == 1){
+				for(int n = 0; n < 10; ++n){
+					moviePlane.renderer.material.mainTexture = date2499[n];
+					yield return new WaitForSeconds(0.3f);
+					
+				}
+			}
 
 			for(int j = 0; j < 20; ++j){
 				moviePlane.renderer.material.color -= new Color(0, 0, 0, Time.deltaTime*2);
@@ -92,8 +109,8 @@ public class SecretRoomController : MonoBehaviour {
 			
 			yield return new WaitForSeconds(time[i]);
 		}
-		Debug.Log("Play Movie");
-
+		audio.clip = sounds[0];
+		audio.Play();
 		Application.LoadLevel("GamePlay-StageEmergency");
 
 	}

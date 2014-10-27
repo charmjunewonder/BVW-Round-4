@@ -2,26 +2,30 @@
 using System.Collections;
 using Leap;
 public class GrabApple : MonoBehaviour {
-
+	public GameObject boy;
 	public HandController handController;
 	public GameObject apple;
 	public GameObject background;
+	public GameObject backgroundPlane;
+	public Texture[] backgrounds;
 	private bool grabSuccessful = false;
 	private bool startToGrab = false;
 	// Use this for initialization
 	void Start () {
 		background.transform.localScale = new Vector3(1, 1, 1);
-
+		backgroundPlane.renderer.material.mainTexture = backgrounds[0];
 		StartCoroutine(scaleImage());
 	}
 
 	IEnumerator scaleImage(){
 		yield return new WaitForSeconds(2.0f);
+
 		for(int i = 0; i < 20; i++){
 			background.transform.localScale += new Vector3(0.1f, 0.1f, 0f);
 			yield return new WaitForSeconds(0.03f);
 
 		}
+		boy.SetActive(false);
 		startToGrab = true;
 	}
 	
@@ -41,6 +45,8 @@ public class GrabApple : MonoBehaviour {
 		   && !grabSuccessful){
 			Debug.Log("fjsla");
 			grabSuccessful = true;
+			backgroundPlane.renderer.material.mainTexture = backgrounds[1];
+
 			StartCoroutine(loadNextLevel());
 			//apple.renderer.enabled = true;
 		}
@@ -75,8 +81,29 @@ public class GrabApple : MonoBehaviour {
 //		}
 
 	}
+	IEnumerator scaleImageBack(){
 
+		for(int i = 0; i < 20; i++){
+			background.transform.localScale -= new Vector3(0.1f, 0.1f, 0f);
+			yield return new WaitForSeconds(0.03f);
+			
+		}
+		boy.SetActive(true);
+		boy.GetComponent<GrabAppleBoy>().back = true;
+
+		handController.hideHands = true;
+		GameObject rightHandG = GameObject.Find("CleanRobotRightHand(Clone)");
+		if(rightHandG != null){
+			Destroy(rightHandG);
+		}
+		GameObject leftHandG = GameObject.Find("CleanRobotLeftHand(Clone)");
+		if(leftHandG != null){
+			Destroy(leftHandG);
+		}	
+	}
 	IEnumerator loadNextLevel(){
+		StartCoroutine(scaleImageBack());
+		yield return new WaitForSeconds(7);
 		int timerCount = 0;
 		while(true){
 			timerCount ++;

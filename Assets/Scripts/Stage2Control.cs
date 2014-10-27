@@ -19,7 +19,7 @@ public class Stage2Control : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (init) {
-			myship.GetComponent<BoyBehavior>().useLeapMotion = false;
+			//myship.GetComponent<BoyBehavior>().useLeapMotion = false;
 			temp = Instantiate(enemybird, new Vector3(-StaticValues.worldboudary_x - 1, 0, -5), 
 			                   Quaternion.identity) as GameObject;
 			temp.SetActive(true);

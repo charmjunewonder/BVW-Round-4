@@ -42,7 +42,7 @@ public class BoyBehavior : MonoBehaviour {
 		if(useLeapMotion){
 			Vector currentPosition = handController.getFirstHandPosition();
 			float y = Mathf.Clamp((currentPosition.y - 200)/20, -9.496778f, 9.496778f);
-			float x = Mathf.Clamp(currentPosition.x/10, -9.496778f, 9.496778f);
+			float x = Mathf.Clamp(currentPosition.x/10, -StaticValues.worldboudary_x, StaticValues.worldboudary_x);
 			transform.position = new Vector3(x, y, -5);
 		}
 
