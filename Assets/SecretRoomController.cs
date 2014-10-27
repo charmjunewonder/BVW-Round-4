@@ -80,6 +80,8 @@ public class SecretRoomController : MonoBehaviour {
 		moviePlane.renderer.material.color += new Color(0, 0, 0, 1);
 
 		for (int i = 0; i < 2; ++i) {
+			audio.clip = sounds[0];
+			audio.Play();
 			if(i == 0){
 				for(int n = 0; n < 10; ++n){
 					moviePlane.renderer.material.mainTexture = date2200[n];
@@ -93,6 +95,7 @@ public class SecretRoomController : MonoBehaviour {
 					
 				}
 			}
+			audio.Stop();
 
 			for(int j = 0; j < 20; ++j){
 				moviePlane.renderer.material.color -= new Color(0, 0, 0, Time.deltaTime*2);
@@ -109,8 +112,10 @@ public class SecretRoomController : MonoBehaviour {
 			
 			yield return new WaitForSeconds(time[i]);
 		}
-		audio.clip = sounds[0];
+		audio.clip = sounds[1];
 		audio.Play();
+		yield return new WaitForSeconds(2f);
+
 		Application.LoadLevel("GamePlay-StageEmergency");
 
 	}

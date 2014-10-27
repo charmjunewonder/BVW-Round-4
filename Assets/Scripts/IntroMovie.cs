@@ -25,6 +25,6 @@ public class IntroMovie : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (!mov.isPlaying || Input.GetKeyDown(KeyCode.S))
-			Application.LoadLevel (1);
+			Application.LoadLevel ("GamePlay-StageSneak");
 	}
 }
